@@ -1,7 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-
 import isInternetExplorerBefore from './ieDetection';
 
 const isPromise = obj => !!obj
@@ -57,7 +54,7 @@ function windowOpen(url, { name, height = 400, width = 550 }, onShareWindowClose
 }
 
 class ShareButton extends PureComponent {
-  static propTypes = {
+  /* static propTypes = {
     additionalProps: PropTypes.object,
     children: PropTypes.node,
     className: PropTypes.string,
@@ -77,7 +74,7 @@ class ShareButton extends PureComponent {
     beforeOnClick: PropTypes.func,
     onShareWindowClose: PropTypes.func,
     tabIndex: PropTypes.string,
-  };
+  }; */
 
   static defaultProps = {
     disabledStyle: {
@@ -159,7 +156,8 @@ class ShareButton extends PureComponent {
       tabIndex,
     } = this.props;
 
-    const classes = cx(
+
+    /* const classes = cx(
       'SocialMediaShareButton',
       `SocialMediaShareButton--${network}`,
       {
@@ -167,8 +165,9 @@ class ShareButton extends PureComponent {
         disabled: !!disabled,
       },
       className,
-    );
-
+    ); */ /* className={`SocialMediaShareButton SocialMediaShareButton--${network}
+    ${className} ${!!disabled ? 'SocialMediaShareButton--disabled disabled' : ''}`} */
+    /* eslint-disable no-extra-boolean-cast */
     return (
       <div
         name={name}
@@ -177,7 +176,9 @@ class ShareButton extends PureComponent {
         tabIndex={tabIndex}
         onClick={this.onClick}
         onKeyPress={this.onKeyPress}
-        className={classes}
+        className={`SocialMediaShareButton SocialMediaShareButton--${network} ${className} ${!!disabled ? 'SocialMediaShareButton--disabled disabled' : ''}`}
+
+
         style={{
           ...style,
           ...(disabled ? disabledStyle : {}),
@@ -185,10 +186,11 @@ class ShareButton extends PureComponent {
         {children}
       </div>
     );
+    /* eslint-disable no-extra-boolean-cast */
   }
 }
 
-function createShareButton(network, link, optsMap = () => ({}), propTypes, defaultProps = {}) {
+function createShareButton(network, link, optsMap = () => ({}), defaultProps = {}) {
   const CreatedButton = props => (
     <ShareButton {...props}
       network={network}
@@ -196,10 +198,13 @@ function createShareButton(network, link, optsMap = () => ({}), propTypes, defau
       opts={optsMap(props)} />
   );
 
-  CreatedButton.propTypes = propTypes;
+  /* CreatedButton.propTypes = propTypes; */
   CreatedButton.defaultProps = defaultProps;
 
   return CreatedButton;
 }
+
+/* function createShareButton(network, link, optsMap = () => ({}),
+propTypes, defaultProps = {}) { */
 
 export default createShareButton;

@@ -2,19 +2,20 @@
 /* eslint-disable import/no-unresolved, import/extensions, import/no-extraneous-dependencies */
 import React, { Component } from 'react';
 import {
-  FacebookShareCount,
+  /* FacebookShareCount,
   GooglePlusShareCount,
   LinkedinShareCount,
   PinterestShareCount,
   VKShareCount,
   OKShareCount,
   RedditShareCount,
-  TumblrShareCount,
+  TumblrShareCount, */
 
   FacebookShareButton,
-  GooglePlusShareButton,
+  /* GooglePlusShareButton, */
   LinkedinShareButton,
   TwitterShareButton,
+  /*
   PinterestShareButton,
   VKShareButton,
   OKShareButton,
@@ -26,13 +27,14 @@ import {
   LivejournalShareButton,
   MailruShareButton,
   ViberShareButton,
-  WorkplaceShareButton,
+  WorkplaceShareButton, */
 
   FacebookIcon,
   TwitterIcon,
-  GooglePlusIcon,
+  /*
+  GooglePlusIcon, */
   LinkedinIcon,
-  PinterestIcon,
+  /* PinterestIcon,
   VKIcon,
   OKIcon,
   TelegramIcon,
@@ -43,11 +45,11 @@ import {
   EmailIcon,
   LivejournalIcon,
   ViberIcon,
-  WorkplaceIcon,
+  WorkplaceIcon, */
 } from 'react-share';
 
 import './Demo.css';
-import exampleImage from './react-share-pin-example.png';
+// import exampleImage from './react-share-pin-example.png';
 
 class Demo extends Component {
   render() {
@@ -66,11 +68,11 @@ class Demo extends Component {
               round />
           </FacebookShareButton>
 
-          <FacebookShareCount
+          {/* <FacebookShareCount
             url={shareUrl}
             className="Demo__some-network__share-count">
             {count => count}
-          </FacebookShareCount>
+          </FacebookShareCount> */}
         </div>
 
         <div className="Demo__some-network">
@@ -88,7 +90,7 @@ class Demo extends Component {
           </div>
         </div>
 
-        <div className="Demo__some-network">
+        {/* <div className="Demo__some-network">
           <TelegramShareButton
             url={shareUrl}
             title={title}
@@ -99,9 +101,9 @@ class Demo extends Component {
           <div className="Demo__some-network__share-count">
             &nbsp;
           </div>
-        </div>
+        </div> */}
 
-        <div className="Demo__some-network">
+        {/* <div className="Demo__some-network">
           <WhatsappShareButton
             url={shareUrl}
             title={title}
@@ -114,8 +116,8 @@ class Demo extends Component {
             &nbsp;
           </div>
         </div>
-
-        <div className="Demo__some-network">
+ */}
+        {/* <div className="Demo__some-network">
           <GooglePlusShareButton
             url={shareUrl}
             className="Demo__some-network__share-button">
@@ -129,7 +131,7 @@ class Demo extends Component {
             className="Demo__some-network__share-count">
             {count => count}
           </GooglePlusShareCount>
-        </div>
+        </div> */}
 
         <div className="Demo__some-network">
           <LinkedinShareButton
@@ -143,14 +145,14 @@ class Demo extends Component {
               round />
           </LinkedinShareButton>
 
-          <LinkedinShareCount
+          {/* <LinkedinShareCount
             url={shareUrl}
             className="Demo__some-network__share-count">
             {count => count}
-          </LinkedinShareCount>
+          </LinkedinShareCount> */}
         </div>
 
-        <div className="Demo__some-network">
+        {/* <div className="Demo__some-network">
           <PinterestShareButton
             url={String(window.location)}
             media={`${String(window.location)}/${exampleImage}`}
@@ -282,7 +284,7 @@ class Demo extends Component {
               size={32}
               round />
           </WorkplaceShareButton>
-        </div>
+        </div> */}
       </div>
     );
   }

@@ -1,12 +1,12 @@
-import PropTypes from 'prop-types';
+/* import PropTypes from 'prop-types'; */
 
-import assert from 'assert';
+// import assert from 'assert';
 
 import objectToGetParams from './utils/objectToGetParams';
 import createShareButton from './utils/createShareButton';
 
 function facebookLink(url, { quote, hashtag }) {
-  assert(url, 'facebook.url');
+  /* assert(url, 'facebook.url'); */
 
   return 'https://www.facebook.com/sharer/sharer.php' + objectToGetParams({
     u: url,
@@ -30,14 +30,10 @@ const FacebookShareButton = createShareButton('facebook', facebookLink, (props) 
       Use "quote" instead.`);
   }
   /* eslint-enable no-console */
-
   return {
     quote: props.quote,
     hashtag: props.hashtag,
   };
-}, {
-  quote: PropTypes.string,
-  hashtag: PropTypes.string,
 }, {
   windowWidth: 550,
   windowHeight: 400,
